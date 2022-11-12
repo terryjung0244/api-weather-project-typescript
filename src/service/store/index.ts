@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { all } from "redux-saga/effects";
-import createSagaMiddleware from "redux-saga";
+import { configureStore } from '@reduxjs/toolkit';
+import { all } from 'redux-saga/effects';
+import createSagaMiddleware from 'redux-saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -13,8 +13,7 @@ export const createStore = () =>
     reducer: {
       // validReducer
     },
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({ serializableCheck: false }).concat(sagaMiddleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }).concat(sagaMiddleware),
   });
 
 export const store = createStore();
