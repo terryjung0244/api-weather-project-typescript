@@ -6,6 +6,7 @@ const { WEATHER_ACTION_REQUEST, WEATHER_ACTION_SUCCESS, WEATHER_ACTION_FAILURE }
 const initialState = {
   loading: false,
   error: null,
+  result: [],
 };
 
 const weatherReducer: Reducer = (state = initialState, action: any) => {
