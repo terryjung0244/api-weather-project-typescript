@@ -7,11 +7,7 @@
   },
 
   // npm을 통해 설치한 외부 ESLint 설정 등록 (eslint-config-{name}으로 설치)
-  "extends": [
-    "react-app",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["react-app", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
 
   // ESLint에 지원할 JavaScript 옵션 설정
   "parserOptions": {
@@ -55,9 +51,6 @@
         "args": "none"
       }
     ],
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ]
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
   }
 }
