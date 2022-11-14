@@ -1,5 +1,8 @@
 import React from 'react';
+import { useAppDispatch } from './components/reusable/hook/useAppDispatch';
 import { useEffect } from 'react';
+import { getWeatherRequestAction } from './service/redux/weatherAction';
+// import useAppSelector from './components/reusable/hook/useAppSelector';
 
 const App = () => {
   // const getCurrentLocation = () => {
@@ -8,13 +11,15 @@ const App = () => {
   //     const lon = position.coords.longitude;
   //   });
   // };
+  // const {} = useAppSelector((state) => state.weatherReducer);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // getCurrentLocation();
   }, []);
 
   const onClickFunc = () => {
-    console.log('123');
+    dispatch(getWeatherRequestAction());
   };
 
   return (

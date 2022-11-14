@@ -12,6 +12,7 @@ const initialState = {
 const weatherReducer: Reducer = (state = initialState, action: any) => {
   switch (action.type) {
     case WEATHER_ACTION_REQUEST:
+      console.log('123');
       return {
         ...state,
         loading: true,
@@ -25,6 +26,7 @@ const weatherReducer: Reducer = (state = initialState, action: any) => {
       return {
         ...state,
         loading: false,
+        error: action.payload,
       };
     default:
       return state;
