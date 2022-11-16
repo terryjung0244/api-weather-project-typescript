@@ -8,6 +8,7 @@ import { WEATHER_REQUEST_TYPE } from './weatherAction.interface';
 
 const { WEATHER_ACTION_REQUEST } = WEATHER_ACTION;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function* weatherRequestFromSaga(action: WEATHER_REQUEST_TYPE): any {
   console.log('123');
   const weatherData: WeatherModel | Error = yield getWeatherByAxios();
