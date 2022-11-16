@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppDispatch } from './components/reusable/hook/useAppDispatch';
+import useAppSelector from './components/reusable/hook/useAppSelector';
 import { useEffect } from 'react';
 import { getWeatherRequestAction } from './service/redux/weatherAction';
 // import useAppSelector from './components/reusable/hook/useAppSelector';
@@ -11,7 +12,7 @@ const App = () => {
   //     const lon = position.coords.longitude;
   //   });
   // };
-  // const {} = useAppSelector((state) => state.weatherReducer);
+  const { loading, error, result } = useAppSelector((state) => state.weatherReducer);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -22,9 +23,14 @@ const App = () => {
     dispatch(getWeatherRequestAction());
   };
 
+  console.log(result);
+
   return (
     <div>
       <button onClick={() => onClickFunc()}>GET WEATHER</button>
+      {loading && <div>I'm Loading!</div>}
+      {error && <div>{error.message}</div>}
+      {result && <div>{result.main.temp}</div>}
     </div>
   );
 };

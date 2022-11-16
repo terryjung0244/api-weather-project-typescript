@@ -18,7 +18,7 @@ export const getWeatherSuccessAction = (dataFromServer: WeatherModel): WEATHER_S
   };
 };
 
-export const getWeatherFailureAction = (dataFromServer: any): WEATHER_FAILURE_TYPE => {
+export const getWeatherFailureAction = (dataFromServer: Error): WEATHER_FAILURE_TYPE => {
   return {
     type: WEATHER_ACTION_FAILURE,
     payload: dataFromServer,

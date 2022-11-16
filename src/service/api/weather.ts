@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { parsedWeatherData, WeatherModel } from '../type/model/weatherModel';
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=toronto&appid={process.env.REACT_APP_WEATHER_API}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=toronto&appid=${process.env.REACT_APP_WEATHER_API}`;
 
 export const getWeatherByAxios = async (): Promise<WeatherModel | Error> => {
   try {

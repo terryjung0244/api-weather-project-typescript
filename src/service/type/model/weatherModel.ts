@@ -1,11 +1,13 @@
-import { MainFromResponse, WeatherResponse } from '../response/weatherResponse';
+import { MainFromResponse, WeatherResponse, WindFromResponse } from '../response/weatherResponse';
 
 export interface WeatherModel {
-  main: MainFromResponse | number;
+  main: MainFromResponse;
+  wind: WindFromResponse;
 }
 
 export const parsedWeatherData = (weatherData: WeatherResponse): WeatherModel => {
   return {
-    main: weatherData.main ?? '123',
+    main: weatherData.main ?? null,
+    wind: weatherData.wind ?? null,
   };
 };

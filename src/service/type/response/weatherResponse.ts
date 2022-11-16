@@ -1,6 +1,6 @@
 export interface WeatherResponse {
   coord: CoordFromResponse;
-  weather: WeatherFromResponse;
+  weather: WeatherFromResponse[]; // or Array<WeatherFromResponse[]
   base: string;
   main: MainFromResponse;
   visibility: number;

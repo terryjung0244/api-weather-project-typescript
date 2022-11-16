@@ -2,11 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { all } from 'redux-saga/effects';
 import weatherReducer from '../redux/weatherReducer';
 import createSagaMiddleware from 'redux-saga';
+import { weatherSagaWatcher } from '../redux/weatherSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
-  yield all([]);
+  yield all([weatherSagaWatcher()]);
 }
 
 export const createStore = () =>
